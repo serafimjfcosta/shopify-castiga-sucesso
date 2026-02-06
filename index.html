@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopify Castiga o Sucesso | Redicom Commerce Cloud</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
             --redicom-green: #7ab929;
-            --redicom-green-dark: #6aa324;
-            --redicom-orange: #f7941d;
-            --dark: #3d3d3d;
-            --darker: #2d2d2d;
-            --text: #333333;
-            --text-light: #666666;
-            --light-bg: #f5f5f5;
-            --white: #ffffff;
+            --redicom-green-hover: #6aa324;
+            --redicom-yellow-green: #c5e34d;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --text-light: #999999;
+            --bg-white: #ffffff;
+            --bg-light: #f8f8f8;
+            --bg-dark: #1a1a1a;
             --danger: #e53935;
             --danger-light: #ffebee;
         }
@@ -27,26 +27,27 @@
         }
 
         body {
-            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--white);
-            color: var(--text);
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-white);
+            color: var(--text-dark);
             line-height: 1.7;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 30px;
         }
 
-        /* Header */
+        /* Header - Estilo Redicom */
         header {
-            background: var(--dark);
-            padding: 15px 0;
+            background: var(--bg-white);
+            padding: 20px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .header-content {
@@ -56,42 +57,75 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--redicom-green);
             text-decoration: none;
-            letter-spacing: -1px;
+            letter-spacing: -0.5px;
         }
 
         .logo span {
-            color: var(--white);
+            color: var(--text-dark);
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 35px;
+            align-items: center;
         }
 
         .nav-links a {
-            color: var(--white);
+            color: var(--text-dark);
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
+            font-size: 0.85rem;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--redicom-green);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
-            padding: 140px 20px 80px;
             position: relative;
-            overflow: hidden;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--redicom-yellow-green);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .btn-cta {
+            background: var(--redicom-green);
+            color: var(--bg-white) !important;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+        }
+
+        .btn-cta:hover {
+            background: var(--redicom-green-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-cta::after {
+            display: none !important;
+        }
+
+        /* Hero Section - Estilo Redicom */
+        .hero {
+            padding: 160px 0 80px;
+            background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+            position: relative;
         }
 
         .hero-content {
@@ -101,33 +135,22 @@
             align-items: center;
         }
 
-        .hero-text {
-            color: var(--white);
-        }
-
-        .hero-label {
-            color: var(--redicom-green);
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
+        .hero-text h1 {
+            font-size: 2.8rem;
             font-weight: 700;
+            font-style: italic;
             line-height: 1.2;
             margin-bottom: 20px;
+            color: var(--text-dark);
         }
 
-        .hero h1 .highlight {
+        .hero-text h1 .highlight {
             color: var(--redicom-green);
         }
 
-        .hero p {
-            font-size: 1.1rem;
-            color: #b0b0b0;
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--text-gray);
             margin-bottom: 30px;
             line-height: 1.8;
         }
@@ -135,20 +158,21 @@
         .btn-primary {
             display: inline-block;
             background: var(--redicom-green);
-            color: var(--white);
+            color: var(--bg-white);
             padding: 15px 35px;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 30px;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s;
         }
 
         .btn-primary:hover {
-            background: var(--redicom-green-dark);
+            background: var(--redicom-green-hover);
             transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(122, 185, 41, 0.3);
         }
 
         .hero-stats {
@@ -158,46 +182,60 @@
         }
 
         .stat-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
+            background: var(--bg-white);
+            border-radius: 10px;
             padding: 25px;
             text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
 
         .stat-card .number {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: var(--danger);
         }
 
         .stat-card .label {
-            font-size: 0.85rem;
-            color: #999;
+            font-size: 0.8rem;
+            color: var(--text-gray);
             margin-top: 5px;
         }
 
-        /* Alert Banner */
-        .alert-banner {
-            background: var(--danger);
-            color: var(--white);
-            padding: 12px 20px;
-            text-align: center;
-            font-weight: 500;
-            font-size: 0.9rem;
+        /* Tabs Navigation - Estilo Redicom */
+        .tabs-nav {
+            background: var(--redicom-yellow-green);
+            padding: 0;
+            position: sticky;
+            top: 70px;
+            z-index: 100;
         }
 
-        .alert-banner strong {
-            font-weight: 700;
+        .tabs-nav .container {
+            display: flex;
+            gap: 0;
+        }
+
+        .tabs-nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 18px 25px;
+            transition: background 0.3s;
+        }
+
+        .tabs-nav a:hover,
+        .tabs-nav a.active {
+            background: rgba(0,0,0,0.1);
         }
 
         /* Section Styles */
         .section {
-            padding: 80px 20px;
+            padding: 80px 0;
         }
 
         .section-light {
-            background: var(--light-bg);
+            background: var(--bg-light);
         }
 
         .section-title {
@@ -208,15 +246,115 @@
         .section-title h2 {
             font-size: 2.2rem;
             font-weight: 700;
-            color: var(--darker);
+            color: var(--text-dark);
             margin-bottom: 15px;
         }
 
         .section-title p {
-            color: var(--text-light);
-            font-size: 1.05rem;
+            color: var(--text-gray);
+            font-size: 1rem;
             max-width: 600px;
             margin: 0 auto;
+        }
+
+        /* Features Grid - Estilo Redicom */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon svg {
+            width: 60px;
+            height: 60px;
+        }
+
+        .feature-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Alternating Content Sections - Estilo Redicom */
+        .content-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            padding: 60px 0;
+        }
+
+        .content-section.reverse {
+            direction: rtl;
+        }
+
+        .content-section.reverse > * {
+            direction: ltr;
+        }
+
+        .content-text h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .content-text p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: var(--text-dark);
+            padding: 12px 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid var(--text-dark);
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--text-dark);
+            color: var(--bg-white);
+        }
+
+        .content-image {
+            position: relative;
+        }
+
+        .content-image img {
+            width: 100%;
+            border-radius: 10px;
         }
 
         /* Comparison Table */
@@ -224,22 +362,23 @@
             width: 100%;
             border-collapse: separate;
             border-spacing: 0;
-            background: var(--white);
-            border-radius: 12px;
+            background: var(--bg-white);
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
         }
 
         .comparison-table thead {
-            background: var(--dark);
+            background: var(--bg-light);
         }
 
         .comparison-table th {
             padding: 20px;
             text-align: left;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--white);
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            border-bottom: 2px solid #eee;
         }
 
         .comparison-table th:first-child {
@@ -247,21 +386,21 @@
         }
 
         .comparison-table th.shopify-col {
-            background: #4a4a4a;
             text-align: center;
             width: 32.5%;
+            color: var(--danger);
         }
 
         .comparison-table th.redicom-col {
-            background: var(--redicom-green);
             text-align: center;
             width: 32.5%;
+            color: var(--redicom-green);
         }
 
         .comparison-table td {
             padding: 18px 20px;
-            border-bottom: 1px solid #eee;
-            font-size: 0.95rem;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.9rem;
         }
 
         .comparison-table tr:last-child td {
@@ -270,127 +409,76 @@
 
         .comparison-table td:first-child {
             font-weight: 600;
-            color: var(--darker);
+            color: var(--text-dark);
         }
 
         .comparison-table td.shopify-cell {
-            background: var(--danger-light);
             text-align: center;
             color: var(--danger);
-            font-weight: 500;
         }
 
         .comparison-table td.redicom-cell {
-            background: #f0f9e8;
             text-align: center;
-            color: var(--redicom-green-dark);
+            color: var(--redicom-green);
             font-weight: 500;
-        }
-
-        .icon-x::before {
-            content: "✗ ";
-        }
-
-        .icon-check::before {
-            content: "✓ ";
         }
 
         /* Danger Cards */
         .danger-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
         }
 
         .danger-card {
-            background: var(--white);
-            border-radius: 12px;
+            background: var(--bg-white);
+            border-radius: 10px;
             padding: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-            border-left: 4px solid var(--danger);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            border-top: 4px solid var(--danger);
         }
 
-        .danger-card h3 {
+        .danger-card h4 {
             color: var(--danger);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .danger-card h3::before {
-            content: "⚠";
-            font-size: 1.2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
         }
 
         .danger-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .danger-card .highlight {
-            color: var(--danger);
-            font-weight: 600;
-        }
-
-        /* Quote Section */
-        .quote-section {
-            background: var(--dark);
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .quote {
-            font-size: 1.4rem;
-            font-style: italic;
-            color: var(--white);
-            max-width: 800px;
-            margin: 0 auto 20px;
-            line-height: 1.7;
-        }
-
-        .quote::before {
-            content: """;
-            font-size: 4rem;
-            color: var(--redicom-green);
-            display: block;
-            line-height: 0.5;
-            margin-bottom: 20px;
-        }
-
-        .quote-source {
-            color: #999;
+            color: var(--text-gray);
             font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .danger-card strong {
+            color: var(--danger);
         }
 
         /* Calculator Section */
         .calculator-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 25px;
         }
 
         .calc-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 30px;
+            background: var(--bg-white);
+            border-radius: 10px;
+            padding: 30px 20px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-            border-top: 4px solid var(--redicom-green);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
         }
 
         .calc-card .revenue {
             font-size: 0.85rem;
-            color: var(--text-light);
+            color: var(--text-gray);
             margin-bottom: 10px;
             font-weight: 500;
         }
 
         .calc-card .loss {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--danger);
         }
@@ -405,181 +493,241 @@
             text-align: center;
             margin-top: 40px;
             font-size: 1.1rem;
-            color: var(--text);
+            color: var(--text-dark);
         }
 
         .calc-note strong {
             color: var(--redicom-green);
         }
 
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .feature-card {
-            text-align: center;
-            padding: 30px 20px;
-        }
-
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--light-bg);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.8rem;
-        }
-
-        .feature-card h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--darker);
-            margin-bottom: 10px;
-        }
-
-        .feature-card p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        /* CTA Section */
+        /* CTA Section - Estilo Redicom */
         .cta-section {
-            background: var(--redicom-green);
-            padding: 80px 20px;
-            text-align: center;
+            background: var(--redicom-yellow-green);
+            padding: 60px 0;
         }
 
-        .cta-section h2 {
-            font-size: 2.2rem;
+        .cta-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .cta-text h2 {
+            font-size: 2rem;
             font-weight: 700;
-            color: var(--white);
+            color: var(--text-dark);
             margin-bottom: 15px;
         }
 
-        .cta-section p {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 30px;
+        .cta-text p {
+            font-size: 1rem;
+            color: var(--text-dark);
+            opacity: 0.8;
         }
 
-        .btn-white {
-            display: inline-block;
-            background: var(--white);
-            color: var(--redicom-green);
-            padding: 15px 40px;
-            font-size: 0.95rem;
+        .cta-form {
+            background: var(--bg-white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .cta-form input {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+
+        .cta-form input:focus {
+            outline: none;
+            border-color: var(--redicom-green);
+        }
+
+        .cta-form button {
+            width: 100%;
+            background: var(--redicom-green);
+            color: var(--bg-white);
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            font-family: inherit;
+            font-size: 0.9rem;
             font-weight: 600;
-            text-decoration: none;
-            border-radius: 6px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            cursor: pointer;
             transition: all 0.3s;
         }
 
-        .btn-white:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        .cta-form button:hover {
+            background: var(--redicom-green-hover);
         }
 
-        /* Footer */
+        /* Footer - Estilo Redicom */
         footer {
-            background: var(--darker);
-            padding: 40px 20px;
-            text-align: center;
+            background: var(--bg-dark);
+            padding: 60px 0 30px;
+            color: var(--bg-white);
         }
 
-        footer p {
-            color: #888;
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand .logo {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .footer-brand p {
             font-size: 0.85rem;
+            color: #999;
+            line-height: 1.7;
         }
 
-        footer a {
+        .footer-links h5 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--bg-white);
+        }
+
+        .footer-links a {
+            display: block;
+            color: #999;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--redicom-green);
+        }
+
+        .footer-contact p {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .footer-contact a {
             color: var(--redicom-green);
             text-decoration: none;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #666;
         }
 
         /* Responsive */
         @media (max-width: 992px) {
-            .hero-content {
+            .hero-content,
+            .content-section,
+            .cta-content {
                 grid-template-columns: 1fr;
-            }
-
-            .hero-stats {
-                margin-top: 40px;
             }
 
             .features-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .danger-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .calculator-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
             .nav-links {
                 display: none;
+            }
+
+            .tabs-nav {
+                overflow-x: auto;
             }
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
+            .hero-text h1 {
+                font-size: 2rem;
             }
 
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-
-            .comparison-table {
-                font-size: 0.85rem;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 12px 10px;
-            }
-
-            .features-grid {
+            .features-grid,
+            .calculator-grid {
                 grid-template-columns: 1fr;
             }
 
-            .danger-grid {
+            .footer-content {
                 grid-template-columns: 1fr;
             }
         }
 
-        /* Trustpilot Badge */
-        .trustpilot-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(0, 0, 0, 0.3);
+        /* Alert Banner */
+        .alert-banner {
+            background: var(--danger);
+            color: var(--bg-white);
             padding: 10px 20px;
-            border-radius: 8px;
-            margin-top: 30px;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 500;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1001;
         }
 
-        .trustpilot-badge .stars {
-            color: var(--redicom-orange);
-            font-size: 1.1rem;
+        header {
+            top: 38px;
         }
 
-        .trustpilot-badge .rating {
-            color: var(--danger);
-            font-weight: 700;
+        .tabs-nav {
+            top: 108px;
         }
 
-        .trustpilot-badge .text {
-            color: #999;
-            font-size: 0.8rem;
+        .hero {
+            padding-top: 200px;
+        }
+
+        /* Icon styles */
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            border: 2px solid var(--redicom-yellow-green);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--redicom-green);
+            font-size: 1.8rem;
         }
     </style>
 </head>
 <body>
+
+    <!-- Alert Banner -->
+    <div class="alert-banner">
+        <strong>⚠ ALERTA:</strong> A Shopify aumentou os preços em 33% e 90% dos comerciantes estão presos ao seu sistema de pagamentos
+    </div>
 
     <!-- Header -->
     <header>
@@ -587,34 +735,23 @@
             <div class="header-content">
                 <a href="https://redicom.pt" class="logo">redi<span>com</span></a>
                 <nav class="nav-links">
-                    <a href="https://redicom.pt">Produtos</a>
+                    <a href="https://redicom.pt/pt/plataforma-b2c_670.html">Produtos</a>
                     <a href="https://redicom.pt/pt/sobre-nos/">Sobre Nós</a>
                     <a href="https://redicom.pt/pt/contactos/">Contactos</a>
+                    <a href="https://redicom.pt/pt/contactos/" class="btn-cta">Peça uma Proposta</a>
                 </nav>
             </div>
         </div>
     </header>
-
-    <!-- Alert Banner -->
-    <div class="alert-banner" style="margin-top: 60px;">
-        <strong>⚠ ALERTA:</strong> A Shopify aumentou os preços em 33% e 90% dos comerciantes estão presos ao seu sistema de pagamentos
-    </div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <div class="hero-label">Redicom Commerce Cloud</div>
-                    <h1>Shopify <span class="highlight">Castiga</span> o Sucesso</h1>
-                    <p>Quanto mais vende, mais paga. Descubra como a Shopify lucra às custas do seu crescimento e porque a Redicom é a alternativa inteligente para negócios que querem escalar sem limites.</p>
-                    <a href="https://redicom.pt/pt/contactos/" class="btn-primary">Fale Connosco</a>
-                    
-                    <div class="trustpilot-badge">
-                        <span class="stars">★☆☆☆☆</span>
-                        <span class="rating">1.3/5</span>
-                        <span class="text">Shopify no Trustpilot (4.238 reviews)</span>
-                    </div>
+                    <h1><em>Shopify <span class="highlight">Castiga</span> o Seu Sucesso</em></h1>
+                    <p class="hero-subtitle">Quanto mais vende, mais paga. Descubra como a Shopify lucra às custas do seu crescimento e porque a Redicom é a alternativa inteligente para negócios que querem escalar sem limites.</p>
+                    <a href="https://redicom.pt/pt/contactos/" class="btn-primary">Saber Mais</a>
                 </div>
                 
                 <div class="hero-stats">
@@ -631,16 +768,60 @@
                         <div class="label">Perdidos/Ano (500k€/mês)</div>
                     </div>
                     <div class="stat-card">
-                        <div class="number">1.666</div>
-                        <div class="label">Queixas no BBB (3 anos)</div>
+                        <div class="number">1.3★</div>
+                        <div class="label">Avaliação Trustpilot</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Tabs Navigation -->
+    <nav class="tabs-nav">
+        <div class="container">
+            <a href="#comparacao" class="active">Comparação</a>
+            <a href="#vantagens">Vantagens Redicom</a>
+            <a href="#perigos">Perigos Shopify</a>
+            <a href="#calculadora">Calculadora</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Features Section -->
+    <section class="section" id="vantagens">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tecnologia Superior para Comércio Omnicanal</h2>
+                <p>A plataforma Redicom Commerce Cloud oferece funcionalidades completas que ajudam o seu negócio a crescer</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-box">🛒</div>
+                    <h4>Plataforma Commerce</h4>
+                    <p>Plataforma Cloud Multimercado e Omnicanal com funcionalidades premium em constante evolução.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box">📦</div>
+                    <h4>Gestão de Encomendas</h4>
+                    <p>Gestão totalmente automatizada, otimizando recursos e garantindo um serviço ao cliente de excelência.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box">🎯</div>
+                    <h4>Marketing Cloud</h4>
+                    <p>Sistema de segmentação automático com campanhas personalizadas cliente a cliente.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box">🏪</div>
+                    <h4>POS Omnicanal</h4>
+                    <p>Sistema POS que liga Lojas Físicas às Lojas Online, sem integrações adicionais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Comparison Section -->
-    <section class="section">
+    <section class="section section-light" id="comparacao">
         <div class="container">
             <div class="section-title">
                 <h2>Comparação Direta: Shopify vs Redicom</h2>
@@ -658,99 +839,99 @@
                 <tbody>
                     <tr>
                         <td>Taxa sobre Vendas</td>
-                        <td class="shopify-cell"><span class="icon-x">0.2% a 2% por venda</span></td>
-                        <td class="redicom-cell"><span class="icon-check">0% - Zero taxas</span></td>
+                        <td class="shopify-cell">✗ 0.2% a 2% por venda</td>
+                        <td class="redicom-cell">✓ 0% - Zero taxas</td>
                     </tr>
                     <tr>
                         <td>POS por Loja Física</td>
-                        <td class="shopify-cell"><span class="icon-x">$89/mês por loja</span></td>
-                        <td class="redicom-cell"><span class="icon-check">Incluído sem custo</span></td>
+                        <td class="shopify-cell">✗ $89/mês por loja</td>
+                        <td class="redicom-cell">✓ Incluído sem custo</td>
                     </tr>
                     <tr>
                         <td>Integração ERP</td>
-                        <td class="shopify-cell"><span class="icon-x">Middleware caro ($1k-$74k/ano)</span></td>
-                        <td class="redicom-cell"><span class="icon-check">Nativa via API</span></td>
+                        <td class="shopify-cell">✗ Middleware caro ($1k-$74k/ano)</td>
+                        <td class="redicom-cell">✓ Nativa via API</td>
                     </tr>
                     <tr>
                         <td>Funcionalidades B2B</td>
-                        <td class="shopify-cell"><span class="icon-x">Apps pagas ou Shopify Plus</span></td>
-                        <td class="redicom-cell"><span class="icon-check">Nativas e incluídas</span></td>
+                        <td class="shopify-cell">✗ Apps pagas ou Shopify Plus</td>
+                        <td class="redicom-cell">✓ Nativas e incluídas</td>
                     </tr>
                     <tr>
                         <td>Localização dos Dados</td>
-                        <td class="shopify-cell"><span class="icon-x">EUA/Canadá (Risco RGPD)</span></td>
-                        <td class="redicom-cell"><span class="icon-check">União Europeia</span></td>
+                        <td class="shopify-cell">✗ EUA/Canadá (Risco RGPD)</td>
+                        <td class="redicom-cell">✓ União Europeia</td>
                     </tr>
                     <tr>
                         <td>Risco de Multas RGPD</td>
-                        <td class="shopify-cell"><span class="icon-x">Até 4% da faturação</span></td>
-                        <td class="redicom-cell"><span class="icon-check">Eliminado</span></td>
+                        <td class="shopify-cell">✗ Até 4% da faturação</td>
+                        <td class="redicom-cell">✓ Eliminado</td>
                     </tr>
                     <tr>
                         <td>Propriedade dos Dados</td>
-                        <td class="shopify-cell"><span class="icon-x">Shopify controla</span></td>
-                        <td class="redicom-cell"><span class="icon-check">100% do comerciante</span></td>
+                        <td class="shopify-cell">✗ Shopify controla</td>
+                        <td class="redicom-cell">✓ 100% do comerciante</td>
                     </tr>
                     <tr>
                         <td>Personalização</td>
-                        <td class="shopify-cell"><span class="icon-x">Muito limitada</span></td>
-                        <td class="redicom-cell"><span class="icon-check">Total flexibilidade</span></td>
+                        <td class="shopify-cell">✗ Muito limitada</td>
+                        <td class="redicom-cell">✓ Total flexibilidade</td>
                     </tr>
                     <tr>
                         <td>Suporte Técnico</td>
-                        <td class="shopify-cell"><span class="icon-x">Chatbots e fóruns</span></td>
-                        <td class="redicom-cell"><span class="icon-check">Suporte direto dedicado</span></td>
+                        <td class="shopify-cell">✗ Chatbots e fóruns</td>
+                        <td class="redicom-cell">✓ Suporte direto dedicado</td>
                     </tr>
                     <tr>
                         <td>Migração/Saída</td>
-                        <td class="shopify-cell"><span class="icon-x">Extremamente difícil</span></td>
-                        <td class="redicom-cell"><span class="icon-check">APIs abertas, dados exportáveis</span></td>
+                        <td class="shopify-cell">✗ Extremamente difícil</td>
+                        <td class="redicom-cell">✓ APIs abertas, dados exportáveis</td>
                     </tr>
                     <tr>
                         <td>Custo Anual (150k€/mês)</td>
-                        <td class="shopify-cell"><span class="icon-x">~€45.000 - €60.000+</span></td>
-                        <td class="redicom-cell"><span class="icon-check">~€7.200 - €12.000</span></td>
+                        <td class="shopify-cell">✗ ~€45.000 - €60.000+</td>
+                        <td class="redicom-cell">✓ ~€7.200 - €12.000</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="section section-light">
+    <!-- Content Section - Headless Commerce -->
+    <section class="section">
         <div class="container">
-            <div class="section-title">
-                <h2>Solução Completa de Comércio Online</h2>
-                <p>A plataforma Redicom Commerce Cloud oferece funcionalidades completas que ajudam o seu negócio a crescer</p>
+            <div class="content-section">
+                <div class="content-text">
+                    <h3>Plataforma em Cloud</h3>
+                    <p>A plataforma engloba um ecossistema de funcionalidades em constante inovação e evolução. Ao suportar o seu projeto na Plataforma Redicom Commerce Cloud, verá garantida uma solução com cada vez mais funcionalidades, adaptada a diferentes mercados e canais e, mais importante de tudo, performance.</p>
+                    <p>Ao contrário da Shopify, que cobra taxas sobre cada venda e limita as suas opções, a Redicom oferece liberdade total para crescer sem penalizações.</p>
+                    <a href="https://redicom.pt/pt/plataforma-b2c_670.html" class="btn-outline">Saber Mais</a>
+                </div>
+                <div class="content-image">
+                    <div style="background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%); height: 300px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #999;">
+                        <span style="font-size: 4rem;">☁️</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🛒</div>
-                    <h4>Plataforma Commerce</h4>
-                    <p>Plataforma Cloud Multimercado e Omnicanal com funcionalidades premium em constante evolução.</p>
+            <div class="content-section reverse">
+                <div class="content-text">
+                    <h3>Headless Commerce</h3>
+                    <p>Arquitetura de e-commerce onde o Front-End está desligado das funcionalidades de comércio de Back-End e pode, portanto, ser atualizado ou editado sem interferir no Front-End.</p>
+                    <p>A evolução da Plataforma pode ser efetuada apenas ao nível do Front-End, podendo mesmo existir várias versões em simultâneo. Esta flexibilidade é impossível na Shopify sem custos astronómicos.</p>
+                    <a href="https://redicom.pt/pt/plataforma-b2c_670.html" class="btn-outline">Saber Mais</a>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📦</div>
-                    <h4>Gestão de Encomendas</h4>
-                    <p>Gestão totalmente automatizada, otimizando recursos e garantindo um serviço ao cliente de excelência.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h4>Marketing Cloud</h4>
-                    <p>Sistema de segmentação automático com campanhas personalizadas cliente a cliente.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏪</div>
-                    <h4>POS Omnicanal</h4>
-                    <p>Sistema POS que liga Lojas Físicas às Lojas Online, sem integrações adicionais.</p>
+                <div class="content-image">
+                    <div style="background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%); height: 300px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #999;">
+                        <span style="font-size: 4rem;">🔗</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Dangers Section -->
-    <section class="section">
+    <section class="section section-light" id="perigos">
         <div class="container">
             <div class="section-title">
                 <h2>Os Perigos Ocultos da Shopify</h2>
@@ -759,45 +940,35 @@
 
             <div class="danger-grid">
                 <div class="danger-card">
-                    <h3>Fundos Bloqueados</h3>
-                    <p>A Shopify pode <span class="highlight">reter os seus pagamentos por semanas ou meses</span> sem explicação. Comerciantes reportam ter <span class="highlight">$7.000+ bloqueados</span> enquanto o suporte não responde.</p>
+                    <h4>⚠ Fundos Bloqueados</h4>
+                    <p>A Shopify pode <strong>reter os seus pagamentos por semanas ou meses</strong> sem explicação. Comerciantes reportam ter <strong>$7.000+ bloqueados</strong> enquanto o suporte não responde.</p>
                 </div>
                 <div class="danger-card">
-                    <h3>Conta Encerrada Sem Aviso</h3>
-                    <p>A sua loja pode ser <span class="highlight">encerrada a qualquer momento</span> por decisão unilateral da Shopify. Sem recurso, sem aviso, sem acesso aos seus dados.</p>
+                    <h4>⚠ Conta Encerrada Sem Aviso</h4>
+                    <p>A sua loja pode ser <strong>encerrada a qualquer momento</strong> por decisão unilateral da Shopify. Sem recurso, sem aviso, sem acesso aos seus dados.</p>
                 </div>
                 <div class="danger-card">
-                    <h3>Multas RGPD até €20M</h3>
-                    <p>Os dados dos seus clientes estão nos EUA. Após a decisão Schrems II, isto é <span class="highlight">potencialmente ilegal</span>. A Meta foi multada em <span class="highlight">€1.2 mil milhões</span> por isto.</p>
+                    <h4>⚠ Multas RGPD até €20M</h4>
+                    <p>Os dados dos seus clientes estão nos EUA. Após a decisão Schrems II, isto é <strong>potencialmente ilegal</strong>. A Meta foi multada em <strong>€1.2 mil milhões</strong> por isto.</p>
                 </div>
                 <div class="danger-card">
-                    <h3>Processo Antitrust</h3>
-                    <p>A Sezzle processou a Shopify por <span class="highlight">práticas monopolísticas</span>. A Shopify limita as opções de pagamento para forçar o uso do Shop Pay.</p>
+                    <h4>⚠ Processo Antitrust</h4>
+                    <p>A Sezzle processou a Shopify por <strong>práticas monopolísticas</strong>. A Shopify limita as opções de pagamento para forçar o uso do Shop Pay.</p>
                 </div>
                 <div class="danger-card">
-                    <h3>Dependência Total</h3>
-                    <p><span class="highlight">90% dos comerciantes</span> estão presos ao Shopify Payments. Quanto mais cresce, mais difícil é sair. É uma armadilha por design.</p>
+                    <h4>⚠ Dependência Total</h4>
+                    <p><strong>90% dos comerciantes</strong> estão presos ao Shopify Payments. Quanto mais cresce, mais difícil é sair. É uma armadilha por design.</p>
                 </div>
                 <div class="danger-card">
-                    <h3>Suporte Inexistente</h3>
-                    <p>A Shopify <span class="highlight">não é acreditada pelo BBB</span> e recusa responder a queixas. O suporte são chatbots que não resolvem nada.</p>
+                    <h4>⚠ Suporte Inexistente</h4>
+                    <p>A Shopify <strong>não é acreditada pelo BBB</strong> e recusa responder a queixas. O suporte são chatbots que não resolvem nada.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Quote Section -->
-    <section class="quote-section">
-        <div class="container">
-            <blockquote class="quote">
-                Shopify feels friendly until you actually try to run something real on it. You pay the monthly plan, then apps start piling up, each one with its own fee, just to get basic functionality.
-            </blockquote>
-            <p class="quote-source">— Comerciante no Trustpilot, Dezembro 2025</p>
-        </div>
-    </section>
-
     <!-- Calculator Section -->
-    <section class="section section-light">
+    <section class="section" id="calculadora">
         <div class="container">
             <div class="section-title">
                 <h2>Quanto Está a Perder para a Shopify?</h2>
@@ -834,18 +1005,54 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="cta-section" id="contacto">
         <div class="container">
-            <h2>Liberte-se da Dependência</h2>
-            <p>Escolha uma plataforma que celebra o seu sucesso em vez de o castigar.</p>
-            <a href="https://redicom.pt/pt/contactos/" class="btn-white">Fale com a Redicom</a>
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Preparado para crescer?</h2>
+                    <p>Fale connosco, temos ao seu dispor uma equipa dedicada para o ajudar a libertar-se da dependência Shopify.</p>
+                </div>
+                <div class="cta-form">
+                    <input type="text" placeholder="Nome *">
+                    <input type="text" placeholder="Empresa *">
+                    <input type="email" placeholder="E-mail *">
+                    <input type="tel" placeholder="Telefone *">
+                    <button type="button" onclick="window.location.href='https://redicom.pt/pt/contactos/'">Submeter</button>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2026 <a href="https://redicom.pt">Redicom Commerce Cloud</a>. Todos os dados apresentados são baseados em fontes públicas: Trustpilot, BBB, Shopify Pricing, RGPD.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="https://redicom.pt" class="logo">redi<span>com</span></a>
+                    <p>A Redicom é o seu parceiro no desenvolvimento de soluções inovadoras de eCommerce com 20 anos de experiência e dedicação.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Redicom</h5>
+                    <a href="https://redicom.pt/pt/sobre-nos/">Sobre Nós</a>
+                    <a href="https://redicom.pt/pt/contactos/">Contactos</a>
+                    <a href="https://redicom.pt/pt/trabalhe-connosco/">Trabalhe Connosco</a>
+                </div>
+                <div class="footer-links">
+                    <h5>Plataformas</h5>
+                    <a href="https://redicom.pt/pt/plataforma-b2c_670.html">Plataforma B2C</a>
+                    <a href="https://redicom.pt/pt/plataforma-b2b_671.html">Plataforma B2B</a>
+                    <a href="https://redicom.pt/pt/integracoes_673.html">Integrações</a>
+                </div>
+                <div class="footer-contact">
+                    <h5>Suporte Técnico</h5>
+                    <p>Disponível de Segunda a Sexta das 9h às 18h</p>
+                    <p><a href="tel:+351252850731">(+351) 252 850 731</a></p>
+                    <p><a href="mailto:apoio.cliente@redicom.pt">apoio.cliente@redicom.pt</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Redicom Commerce Cloud. Todos os dados apresentados são baseados em fontes públicas: Trustpilot, BBB, Shopify Pricing, RGPD.</p>
+            </div>
         </div>
     </footer>
 
