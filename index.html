@@ -7,15 +7,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --black: #000000;
-            --dark: #1a1a1a;
-            --gray-900: #212121;
+            --primary: steelblue;
+            --primary-dark: #3a6d8c;
+            --accent: orange;
+            --accent-dark: #e69500;
+            --black: #1a1a1a;
             --gray-800: #333333;
-            --gray-700: #444444;
             --gray-600: #666666;
             --gray-500: #888888;
             --gray-400: #aaaaaa;
-            --gray-300: #cccccc;
             --gray-200: #e5e5e5;
             --gray-100: #f5f5f5;
             --white: #ffffff;
@@ -60,7 +60,7 @@
         .logo {
             font-size: 1.2rem;
             font-weight: 700;
-            color: var(--black);
+            color: var(--primary);
             text-decoration: none;
             letter-spacing: -0.5px;
         }
@@ -80,12 +80,12 @@
         }
 
         .nav-links a:hover {
-            color: var(--black);
+            color: var(--primary);
         }
 
         .btn {
             display: inline-block;
-            background: var(--black);
+            background: var(--primary);
             color: var(--white);
             padding: 12px 24px;
             font-size: 0.85rem;
@@ -95,18 +95,15 @@
         }
 
         .btn:hover {
-            background: var(--gray-800);
+            background: var(--primary-dark);
         }
 
-        .btn-outline {
-            background: transparent;
-            color: var(--black);
-            border: 2px solid var(--black);
+        .btn-accent {
+            background: var(--accent);
         }
 
-        .btn-outline:hover {
-            background: var(--black);
-            color: var(--white);
+        .btn-accent:hover {
+            background: var(--accent-dark);
         }
 
         /* Hero */
@@ -123,6 +120,10 @@
             line-height: 1.1;
             margin-bottom: 24px;
             letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
         }
 
         .hero p {
@@ -149,7 +150,7 @@
         .stat .number {
             font-size: 2.5rem;
             font-weight: 800;
-            color: var(--black);
+            color: var(--accent);
             letter-spacing: -1px;
         }
 
@@ -194,7 +195,7 @@
         }
 
         .comparison-table thead {
-            background: var(--black);
+            background: var(--primary);
             color: var(--white);
         }
 
@@ -207,6 +208,14 @@
 
         .comparison-table th:not(:first-child) {
             text-align: center;
+        }
+
+        .comparison-table th.shopify-col {
+            background: var(--accent);
+        }
+
+        .comparison-table th.redicom-col {
+            background: var(--primary);
         }
 
         .comparison-table td {
@@ -229,13 +238,14 @@
         }
 
         .bad {
-            color: var(--gray-800);
-            background: var(--gray-100);
+            color: var(--accent-dark);
+            background: #fff8f0;
         }
 
         .good {
-            color: var(--black);
+            color: var(--primary);
             font-weight: 600;
+            background: #f0f6fa;
         }
 
         /* Danger Section */
@@ -248,13 +258,14 @@
         .danger-card {
             background: var(--white);
             border: 1px solid var(--gray-200);
+            border-top: 4px solid var(--accent);
             padding: 30px;
         }
 
         .danger-card h4 {
             font-size: 1rem;
             font-weight: 700;
-            color: var(--black);
+            color: var(--accent);
             margin-bottom: 12px;
         }
 
@@ -291,7 +302,7 @@
         .calc-card .loss {
             font-size: 2rem;
             font-weight: 800;
-            color: var(--black);
+            color: var(--accent);
             letter-spacing: -1px;
         }
 
@@ -309,12 +320,12 @@
         }
 
         .calc-note strong {
-            color: var(--black);
+            color: var(--primary);
         }
 
         /* Quote */
         .quote-section {
-            background: var(--black);
+            background: var(--primary);
             color: var(--white);
             padding: 80px 0;
             text-align: center;
@@ -333,7 +344,7 @@
             margin-top: 24px;
             font-size: 0.9rem;
             font-style: normal;
-            color: var(--gray-400);
+            opacity: 0.8;
         }
 
         /* CTA */
@@ -420,9 +431,9 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1>Shopify Castiga<br>o Sucesso</h1>
+            <h1>Shopify <span>Castiga</span><br>o Sucesso</h1>
             <p>Quanto mais vende, mais paga. A Shopify lucra às custas do seu crescimento. Conheça os factos.</p>
-            <a href="#comparacao" class="btn">Ver Comparação</a>
+            <a href="#comparacao" class="btn btn-accent">Ver Comparação</a>
 
             <div class="stats-row">
                 <div class="stat">
@@ -457,8 +468,8 @@
                 <thead>
                     <tr>
                         <th>Critério</th>
-                        <th>Shopify</th>
-                        <th>Redicom</th>
+                        <th class="shopify-col">Shopify</th>
+                        <th class="redicom-col">Redicom</th>
                     </tr>
                 </thead>
                 <tbody>
